@@ -19,7 +19,7 @@ pinned: false
 ![FAISS](https://img.shields.io/badge/FAISS-Vector--DB-orange)
 
 ## 🌐 Live Demo
-👉 [DocTalk on Hugging Face](your_link_here) ← we'll update this after deployment
+👉 👉 [DocTalk on Hugging Face](https://huggingface.co/spaces/abdarman124/doctalk)
 
 ## 🚀 What is DocTalk?
 DocTalk is a RAG-based document intelligence platform where users can upload any PDF and have a context-aware conversation with it. The system retrieves exact relevant sections and uses LLaMA 3 to generate grounded, cited answers.
