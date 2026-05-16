@@ -19,7 +19,6 @@ DocTalk is a RAG-based document intelligence platform where users can upload any
 - 🤖 **LLaMA 3 Powered** — Meta's LLaMA 3.3-70b via Groq API
 - 📌 **Source Citations** — See exactly which part of document answered your question
 - 📝 **One-Click Summary** — Instant document summary in bullet points
-- 💬 **Chat History** — Full conversation memory within session
 
 ## 🛠️ Tech Stack
 | Layer | Technology |
@@ -47,7 +46,6 @@ cd doctalk
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
-# Add your GROQ_API_KEY to .env file
 streamlit run app.py
 ```
 
