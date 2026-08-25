@@ -1,3 +1,12 @@
+---
+title: DocTalk
+emoji: 📄
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+app_file: app.py
+pinned: false
+---
 # 📄 DocTalk — Universal AI Document Intelligence Platform
 
 > Chat with any document using RAG (Retrieval-Augmented Generation)
