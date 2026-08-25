@@ -1,13 +1,10 @@
 import streamlit as st
-from dotenv import load_dotenv
 import os
 import PyPDF2
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 from groq import Groq
-
-load_dotenv()
 
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
