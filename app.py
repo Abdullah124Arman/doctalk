@@ -174,7 +174,7 @@ Document Content:
 
 Summary:"""
             summary_response = groq_client.chat.completions.create(
-                model="gpt-oss-120b",
+                model="llama3-8b-8192",
                 messages=[{"role": "user", "content": summary_prompt}]
             )
             summary = summary_response.choices[0].message.content
@@ -211,7 +211,7 @@ Answer:"""
         with st.chat_message("assistant"):
             with st.spinner("🤖 Thinking..."):
                 response = groq_client.chat.completions.create(
-                    model="gpt-oss-120b",
+                    model="llama3-8b-8192",
                     messages=[{"role": "user", "content": prompt}]
                 )
                 answer = response.choices[0].message.content
