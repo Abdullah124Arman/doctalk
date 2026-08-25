@@ -175,7 +175,7 @@ Document Content:
 
 Summary:"""
             summary_response = gemini_client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.6-flash',
                 contents=summary_prompt,
             )
             summary = summary_response.text
@@ -212,7 +212,7 @@ Answer:"""
         with st.chat_message("assistant"):
             with st.spinner("🤖 Thinking..."):
                 response = gemini_client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.6-flash',
                     contents=prompt,
                 )
                 answer = response.text
