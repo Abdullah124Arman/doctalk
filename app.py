@@ -4,9 +4,11 @@ import PyPDF2
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-from groq import Groq
+import google.generativeai as genai
 
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# Initialize Gemini instead of Groq
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+llm_model = genai.GenerativeModel('gemini-1.5-flash')
 
 @st.cache_resource
 def load_embedding_model():
@@ -173,11 +175,8 @@ Document Content:
 {all_text[:3000]}
 
 Summary:"""
-            summary_response = groq_client.chat.completions.create(
-                model="llama3-8b-8192",
-                messages=[{"role": "user", "content": summary_prompt}]
-            )
-            summary = summary_response.choices[0].message.content
+            summary_response = llm_model.generate_content(summary_prompt)
+            summary = summary_response.text
             st.success("📝 Document Summary")
             st.write(summary)
 
@@ -210,11 +209,8 @@ Answer:"""
 
         with st.chat_message("assistant"):
             with st.spinner("🤖 Thinking..."):
-                response = groq_client.chat.completions.create(
-                    model="llama3-8b-8192",
-                    messages=[{"role": "user", "content": prompt}]
-                )
-                answer = response.choices[0].message.content
+                response = llm_model.generate_content(prompt)
+                answer = response.text
                 st.write(answer)
 
                 with st.expander("📌 Source chunks used"):

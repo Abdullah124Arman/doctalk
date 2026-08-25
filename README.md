@@ -13,19 +13,19 @@ pinned: false
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red)
-![LLaMA](https://img.shields.io/badge/LLaMA-3.3--70b-green)
+![LLM](https://img.shields.io/badge/LLM-Gemini_1.5_Flash-green)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector--DB-orange)
 
 ## 🌐 Live Demo
 👉 👉 [DocTalk on Hugging Face](https://huggingface.co/spaces/abdarman124/doctalk)
 
 ## 🚀 What is DocTalk?
-DocTalk is a RAG-based document intelligence platform where users can upload any PDF and have a context-aware conversation with it. The system retrieves exact relevant sections and uses LLaMA 3 to generate grounded, cited answers.
+DocTalk is a RAG-based document intelligence platform where users can upload any PDF and have a context-aware conversation with it. The system retrieves exact relevant sections and uses Gemini 1.5 Flash to generate grounded, cited answers.
 
 ## ✨ Features
 - 📁 **Multi-PDF Support** — Upload multiple PDFs simultaneously
 - 🔍 **Semantic Search** — FAISS vector database for intelligent retrieval
-- 🤖 **LLaMA 3 Powered** — Meta's LLaMA 3.3-70b via Groq API
+- 🤖 **Gemini Powered** — Google's Gemini 1.5 Flash via Generative AI API
 - 📌 **Source Citations** — See exactly which part of document answered your question
 - 📝 **One-Click Summary** — Instant document summary in bullet points
 
@@ -35,7 +35,7 @@ DocTalk is a RAG-based document intelligence platform where users can upload any
 | Frontend | Streamlit |
 | Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
 | Vector Database | FAISS |
-| LLM | LLaMA 3.3-70b via Groq API |
+| LLM | Gemini 1.5 Flash via Google API |
 | Document Parsing | PyPDF2 |
 
 ## ⚙️ How It Works
@@ -45,7 +45,7 @@ DocTalk is a RAG-based document intelligence platform where users can upload any
 4. Embeddings stored in FAISS vector database
 5. User asks a question
 6. Semantically similar chunks retrieved from FAISS
-7. LLaMA 3 generates answer based strictly on retrieved chunks
+7. Gemini generates answer based strictly on retrieved chunks
 8. Source citations shown for transparency
 
 ## 🏃 Run Locally
