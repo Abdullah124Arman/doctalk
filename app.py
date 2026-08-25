@@ -4,11 +4,10 @@ import PyPDF2
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-import google.generativeai as genai
+from google import genai
 
-# Initialize Gemini instead of Groq
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-llm_model = genai.GenerativeModel('gemini-1.5-flash')
+# Initialize Gemini
+gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 @st.cache_resource
 def load_embedding_model():
@@ -175,7 +174,10 @@ Document Content:
 {all_text[:3000]}
 
 Summary:"""
-            summary_response = llm_model.generate_content(summary_prompt)
+            summary_response = gemini_client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=summary_prompt,
+            )
             summary = summary_response.text
             st.success("📝 Document Summary")
             st.write(summary)
@@ -209,7 +211,10 @@ Answer:"""
 
         with st.chat_message("assistant"):
             with st.spinner("🤖 Thinking..."):
-                response = llm_model.generate_content(prompt)
+                response = gemini_client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=prompt,
+                )
                 answer = response.text
                 st.write(answer)
 
